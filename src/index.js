@@ -18,6 +18,10 @@ function onSearch(e) {
 
   clearMarkup();
 
+  if (!value) {
+    return;
+  }
+
   fetchCountries(value)
     .then(data => {
       if (data.length > 10) {
