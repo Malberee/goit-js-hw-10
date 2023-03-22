@@ -16,10 +16,7 @@ refs.searchRef.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 function onSearch(e) {
   const value = e.target.value.trim();
 
-  if (!value) {
-    clearMarkup();
-    return;
-  }
+  clearMarkup();
 
   fetchCountries(value)
     .then(data => {
@@ -43,8 +40,6 @@ function onSearch(e) {
 }
 
 function renderCountryList(data) {
-  clearMarkup();
-
   console.log(data);
 
   data.forEach(country => {
@@ -59,8 +54,6 @@ function renderCountryList(data) {
 }
 
 function renderCountryInfo(data) {
-  clearMarkup();
-
   console.log(data);
 
   data.forEach(country => {
